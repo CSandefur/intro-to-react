@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>React Assignment Number One</title>
+	</head>
+	<body>
+		<div id="place" style="color:black; background:green;"></div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+		<script type="text/babel">
+			class Testing extends React.Component {
+				render() {
+					return (
+						<div>
+							<h1>Testing Out React</h1>
+							<p>Do multilines work because they are all inside the div element?</p>
+							<p>Inline CSS styling didn't work inside of the React Component, but it did work using the target destination div!</p>
+						</div>
+					);
+				}
+			}
+
+			ReactDOM.render(
+				<Testing />, document.getElementById('place')
+			);
+		</script>
+	</body>
+</html>
