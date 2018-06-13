@@ -5,24 +5,49 @@
 	</head>
 	<body>
 		<div id="place" style="color:black; background:green;"></div>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
 		<script type="text/babel">
+
 			class Testing extends React.Component {
+				constructor(props){
+					super(props);
+					this.state = {
+						percentage: 50
+					}
+				}
+
+
+
 				render() {
 					return (
 						<div>
 							<h1>Testing Out React</h1>
-							<p>Do multilines work because they are all inside the div element?</p>
-							<p>Inline CSS styling didn't work inside of the React Component, but it did work using the target destination div!</p>
+							<p>Greetings {this.props.name}!</p>
+							<p>Today is {this.props.date.toLocaleDateString()}. You are working on 
+Bloc.io's {this.props.label}, and you are about {this.state.percentage}% of the way through. {this.props.message}!</p>
 						</div>
 					);
 				}
 			}
 
+			const details = {
+				date: new Date(),
+				label: "Web Developer Track"
+			}
+
+			Testing.defaultProps = {
+				message: "You got this!"
+			}
+
 			ReactDOM.render(
-				<Testing />, document.getElementById('place')
+				<Testing 
+					name="Chelcy"
+					date={details.date}
+					label={details.label}/>, document.getElementById('place')
 			);
 		</script>
 	</body>
